@@ -54,15 +54,15 @@ stage("Docker Build & Push"){
                 script{
                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
                        sh "docker build -t devsecops_ad ."
-                       sh "docker tag devsecops_ad praveensingam1994/devsecops_ad:latest "
-                       sh "docker push praveensingam1994/devsecops_ad:latest "
+                       sh "docker tag devsecops_ad yogita07/devsecops_ad:latest "
+                       sh "docker push yogita07/devsecops_ad:latest "
                     }
                 }
             }
         }
         stage("TRIVY"){
             steps{
-                sh "trivy image praveensingam1994/devsecops_ad:latest > trivy.txt" 
+                sh "trivy image yogita07/devsecops_ad:latest > trivy.txt" 
             }
         }
 stage('Deploy to container'){
