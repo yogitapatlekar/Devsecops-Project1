@@ -67,7 +67,7 @@ stage("Docker Build & Push"){
         }
 stage('Deploy to container'){
             steps{
-                sh 'docker run -d --name 2048 -p 3000:3000 praveensingam1994/devsecops_ad:latest'
+                sh 'docker run -d --name 2048 -p 3000:3000 yogita07/devsecops_ad:latest'
             }
         }
 stage('Deploy to kubernets'){
